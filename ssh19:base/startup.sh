@@ -3,13 +3,13 @@
 # startup.sh
 # -------------------------------------
 
-/opt/docker/install.sh && echo "Install Ok"
+/opt/docker/install.sh
 
 # Configuració ldap
-/sbin/nscd && echo "nscd Ok"
-/sbin/nslcd  && echo "nslcd OK"
+/sbin/nscd
+/sbin/nslcd
 
 # Deixar-lo en foreground
 /usr/bin/ssh-keygen -A
-/sbin/sshd -d
+/sbin/sshd -D
 

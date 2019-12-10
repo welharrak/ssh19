@@ -3,7 +3,7 @@
 # startup.sh
 # -------------------------------------
 
-/opt/docker/install.sh
+bash /opt/docker/install.sh
 
 # Configuració ldap
 /sbin/nscd

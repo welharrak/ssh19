@@ -1,0 +1,20 @@
+version: "2"
+services:
+  ldap:
+    image: welharrak/ldapserver19:latest
+    container_name: ldapserver
+    hostname: ldapserver
+    ports: 
+      - "389:389"
+    networks:
+     - ldapnet
+  ssh:
+    image: welharrak/ssh19:base
+    container_name: ssh
+    hostname: ssh
+    ports:
+      - "2022:22"
+    networks:
+      - ldapnet
+networks:
+    ldapnet:

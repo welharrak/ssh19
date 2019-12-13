@@ -7,14 +7,19 @@ services:
     ports: 
       - "389:389"
     networks:
-     - ldapnet
+      - ldapnet
   ssh:
     image: welharrak/ssh19:base
     container_name: ssh
     hostname: ssh
+    volumes:
+      - "homes:/tmp/home"
     ports:
       - "2022:22"
+    privileged: true
     networks:
       - ldapnet
 networks:
     ldapnet:
+volumes:
+    homes:
